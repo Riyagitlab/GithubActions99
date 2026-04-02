@@ -2,8 +2,7 @@ name: my workflow
 # To get trigger on every push in my repo in any branch
 on:
   schedule:
-    - cron: "*1/ * * * *"
-
+    - cron: "*/5 * * * *"
 jobs:
   job1:
    name: JOB1
