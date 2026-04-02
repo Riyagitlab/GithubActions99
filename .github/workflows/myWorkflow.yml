@@ -25,5 +25,21 @@ jobs:
           echo "Hi this is the place to learn"
           echo "Have a Great learning"
           sleep 20
+
+  job3:
+    name: JOB3
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: job with single dependency
+        run: sleep 10
+
+  job4:
+    name: JOB4
+    needs: [job1, job2, job3]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job for multiple dependencies
+        run: sleep 10
        
   
