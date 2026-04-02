@@ -11,5 +11,19 @@ jobs:
        run: echo "Hello"
      - name: Checking OS Release for GitHub Hosted Runner
        run: cat /etc/os-release
+     - name: calling sleep
+       run: sleep 20
+
+  job2:
+   name: JOB2
+   runs-on: ubuntu-latest
+   steps:
+     - name: checking the hostname for runner
+       run: hostname
+     - name: Running multiple commands
+       run: |
+          echo "Hi this is the place to learn"
+          echo "Have a Great learning"
+          sleep 20
        
   
