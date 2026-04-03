@@ -56,7 +56,7 @@ jobs:
        run: |
          echo "{INFO] Application password is ${{secrets.APP_PASSWORD}}"
          
- job3:
+  job3:
    name: JOB3
    runs-on: ubuntu-latest
    steps:
