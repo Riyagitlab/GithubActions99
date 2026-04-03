@@ -1,52 +1,26 @@
 name: my workflow
 # To get trigger on every push in my repo in any branch
-on:
-  schedule:
-    - cron: "5 * * * *"
-  workflow_dispatch:
+on:  
   push:    
 jobs:
   job1:
    name: JOB1
    runs-on: ubuntu-latest
    steps:
-     - name: Running single command in job1
-       run: echo "Hello"
-     - name: Checking OS Release for GitHub Hosted Runner
-       run: cat /etc/os-release
-     - name: calling sleep
-       run: sleep 20
-
-  job2:
-   name: JOB2
-   runs-on: ubuntu-latest
-   steps:
-     - name: checking the hostname for runner
-       run: hostname
-     - name: Running multiple commands
+     - name: step-1
        run: |
-          echo "Hi this is the place to learn"
-          echo "Have a Great learning"
-          sleep 20
+         pwd
+         ls -ltr
+         hostname
+     - name: checkout
+       uses: actions/checkout@v6.0.2
+     - name: step-3
+       run: |
+           pwd
+           ls -ltr
+           hostname
+           
+        
+     
 
-  job3:
-    name: JOB3
-    needs: job1
-    runs-on: windows-latest
-    steps:
-      - name: job with single dependency
-        run: sleep 10
-      - name: checking runner info
-        shell: pwsh
-        run: get-computerinfo
-
-  job4:
-    name: JOB4
-    needs: [job1, job2, job3]
-    runs-on: macos-latest
-    steps:
-      - name: Job for multiple dependencies
-        run: sleep 10
-      - name: checking Runner info
-        run: sw_vers
   
