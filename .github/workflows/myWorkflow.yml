@@ -2,6 +2,10 @@ name: my workflow
 # To get trigger on every push in my repo in any branch
 on:  
   push:    
+   branches:
+     - dev
+     - 'feaure-*'
+     - main
 jobs:
   job1:
    name: JOB1
