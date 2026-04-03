@@ -110,7 +110,7 @@ jobs:
          echo "CHECKING SINGLE FILE DIRECTORY"
          ls -ltr single_file
          echo "checking directory artifact"
-         ls ltr download_directory
+         ls -ltr download_directory
         
      
 
