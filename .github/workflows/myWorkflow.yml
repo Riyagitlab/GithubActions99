@@ -75,7 +75,8 @@ jobs:
       - name: Referring Environment Secrets
         run: echo " [INFO] Password for ${{ vars.USER }} is ${{ secrets.PASSWORD}}"
     environment:
-        name: STAGING   
+        name: STAGING  
+    if: github.ref == 'refs/head/dev' 
 
   production:
     name: PRODUCTION DEPLOYMENT
@@ -86,7 +87,8 @@ jobs:
       - name: Referring Environment Secrets
         run: echo " [INFO] Password for ${{ vars.USER }} is ${{ secrets.PASSWORD}}"
     environment:
-        name: PRODUCTION          
+        name: PRODUCTION 
+    if: github.ref == 'refs/head/main'  
         
      
 
