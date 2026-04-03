@@ -23,7 +23,7 @@ jobs:
      - name: upload single file
        uses:  actions/upload-artifact@v7.0.0
        with:
-          name: single_file
+          name: single file
           path: ./myartifact.txt
      - name: upload from directory
        uses: actions/upload-artifact@v7.0.0
@@ -56,7 +56,7 @@ jobs:
      - name: Download single file Artifact
        uses: actions/download-artifact@v7.0.0
        with:
-         name: single_file
+         name: single file
      - name: checking current directory post download
        run: |
          pwd
