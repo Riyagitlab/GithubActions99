@@ -8,8 +8,7 @@ on:
      - main
   pull_request:
     branches:
-      - main
-     
+      - main     
 jobs:
   job1:
    name: JOB1
